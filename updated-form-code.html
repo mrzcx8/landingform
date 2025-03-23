@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perkhidmatan Form Profesional</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* RESET & BASIC STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER SECTION */
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+        }
+
+        /* SERVICE SECTION */
+        .services {
+            padding: 40px 0;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .service-button {
+            background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .service-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-button i {
+            margin-right: 10px;
+        }
+
+        .services-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .services-flex .service-card {
+            flex: 0 0 calc(50% - 25px);
+            max-width: calc(50% - 25px);
+            margin-bottom: 25px;
+        }
+
+        .service-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-content h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .service-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-content h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* SAMPLES SECTION */
+        .samples {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .tab-button {
+            background-color: #eee;
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            width: 100%;
+            height: 600px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .sample-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CTA SECTION */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-button i {
+            margin-right: 10px;
+        }
+
+        /* DOMAIN SECTION */
+        .domain {
+            padding: 60px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .domain-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .domain h3 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        .domain-badge {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* HOW TO ORDER SECTION */
+        .how-to-order {
+            padding: 40px 0;
+            background-color: #f0f4f8;
+            text-align: center;
+        }
+
+        .order-button {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .order-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .order-button i {
+            margin-right: 10px;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 220px;
+            max-width: 280px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 1;
+        }
+
+        .step-content {
+            padding: 30px 20px 20px;
+            text-align: center;
+        }
+
+        .step-content h3 {
+            margin: 20px 0 10px;
+            color: #333;
+        }
+
+        /* MODAL FORM STYLES */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.2);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #6a11cb;
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2);
+            outline: none;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 12px;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-height: 100px;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+
+        .form-textarea:focus {
+            border-color: #6a11cb;
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2);
+            outline: none;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .form-note {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-button {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+            
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .services-flex .service-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .form-row .form-group {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header>
+        <div class="container header-content">
+            <h1>Perkhidmatan Form Profesional</h1>
+            <p class="header-subtitle">Dapatkan form profesional untuk perniagaan anda. Tingkatkan imej dan profesionalisme dengan form yang direka khas untuk memenuhi keperluan anda.</p>
+            <div class="pricing-badge">🔥 Gunakan Kod Promo: PROMO2025 untuk Diskaun Istimewa!</div>
+        </div>
+    </header>
+
+    <!-- HOW TO ORDER SECTION -->
+    <section class="how-to-order">
+        <div class="container">
+            <button id="howToOrderBtn" class="order-button">
+                <i class="fas fa-shopping-cart"></i> CARA ORDER
+            </button>
+            
+            <div id="orderSteps" class="steps-container" style="display: none;">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Hantar Butiran Bisnes</h3>
+                        <p>Berikan butiran perniagaan atau produk anda melalui WhatsApp. Sertakan logo, warna tema, dan maklumat penting.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Lihat Contoh Form</h3>
+                        <p>Semak contoh-contoh form yang tersedia untuk mendapatkan idea. Pilih rekaan yang sesuai dengan keperluan perniagaan anda.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Pengesahan & Pembayaran</h3>
+                        <p>Setelah berpuas hati dengan contoh, buat pembayaran. Kami akan mula memproses pesanan anda.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Tunggu 1-4 Jam</h3>
+                        <p>Form anda akan siap dalam masa 1-4 jam sahaja! Kami akan hantar butiran WhatsApp untuk komunikasi langsung dengan pelanggan anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services">
+        <div class="container">
+            <button id="servicesBtn" class="service-button">
+                <i class="fas fa-list-alt"></i> PERKHIDMATAN KAMI
+            </button>
+            
+            <div id="servicesList" class="services-flex" style="display: none;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Form Pendaftaran Kursus</h3>
+                        <p>Form profesional untuk pendaftaran kursus, seminar atau bengkel. Mudah digunakan dan kelihatan profesional.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Form Tempahan Servis Aircond</h3>
+                        <p>Form untuk pelanggan tempah servis aircond. Lengkap dengan pilihan servis, masa dan keperluan khas.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Form Tempahan Kereta Sewa</h3>
+                        <p>Form tempahan kereta sewa yang lengkap. Mudahkan proses tempahan dan tingkatkan imej perniagaan anda.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Form Hubungi Kami</h3>
+                        <p>Form profesional untuk pelanggan menghubungi perniagaan anda. Tingkatkan perkhidmatan pelanggan dengan mudah.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Form Checkout Produk</h3>
+                        <p>Form checkout yang lengkap untuk perniagaan online anda. Mudahkan proses pembelian produk.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Form Pendaftaran Program</h3>
+                        <p>Form untuk pendaftaran program atau acara. Profesional dan mudah digunakan untuk semua jenis program.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAMPLES SECTION -->
+    <section class="samples">
+        <div class="container">
+            <h2 class="section-title">Contoh Form</h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'form1')">Form Kursus</button>
+                <button class="tab-button" onclick="openTab(event, 'form2')">Form Aircond</button>
+                <button class="tab-button" onclick="openTab(event, 'form3')">Form Kereta Sewa</button>
+                <button class="tab-button" onclick="openTab(event, 'form4')">Form Contact Us</button>
+                <button class="tab-button" onclick="openTab(event, 'form5')">Form Checkout</button>
+                <button class="tab-button" onclick="openTab(event, 'form6')">Form Program</button>
+            </div>
+            
+            <div id="form1" class="tab-content active">
+                <iframe class="sample-frame" src="https://formdaftarkursus.netlify.app/"></iframe>
+            </div>
+            
+            <div id="form2" class="tab-content">
+                <iframe class="sample-frame" src="https://formbookingserviceaircond.netlify.app/"></iframe>
+            </div>
+            
+            <div id="form3" class="tab-content">
+                <iframe class="sample-frame" src="https://formbookingkeretasewa.netlify.app/"></iframe>
+            </div>
+            
+            <div id="form4" class="tab-content">
+                <iframe class="sample-frame" src="https://formcontactus.netlify.app/"></iframe>
+            </div>
+            
+            <div id="form5" class="tab-content">
+                <iframe class="sample-frame" src="https://formproductcheckout.netlify.app/"></iframe>
+            </div>
+            
+            <div id="form6" class="tab-content">
+                <iframe class="sample-frame" src="https://formregisterprogram.netlify.app/"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta">
+        <div class="container cta-content">
+            <h2>Dapatkan Form Profesional Anda Sekarang!</h2>
+            <p>Dapatkan form profesional dengan harga RM250 atau gunakan kod promo untuk harga istimewa!</p>
+            <a id="orderFormBtn" class="whatsapp-button"><i class="fab fa-whatsapp"></i> Tempah Melalui WhatsApp</a>
+        </div>
+    </section>
+    
+    <!-- MODAL FORM -->
+    <div id="formModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Tempahan Form Profesional</h3>
+                <button id="closeModalBtn" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerName">Nama Penuh</label>
+                            <input type="text" id="customerName" name="customerName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">No. Telefon</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerEmail">Emel</label>
+                        <input type="email" id="customerEmail" name="customerEmail" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="formType">Jenis Form</label>
+                        <select id="formType" name="formType" class="form-select" required>
+                            <option value="">Pilih Jenis Form</option>
+                            <option value="Form Pendaftaran Kursus">Form Pendaftaran Kursus</option>
+                            <option value="Form Tempahan Servis Aircond">Form Tempahan Servis Aircond</option>
+                            <option value="Form Tempahan Kereta Sewa">Form Tempahan Kereta Sewa</option>
+                            <option value="Form Hubungi Kami">Form Hubungi Kami</option>
+                            <option value="Form Checkout Produk">Form Checkout Produk</option>
+                            <option value="Form Pendaftaran Program">Form Pendaftaran Program</option>
+                            <option value="Lain-lain">Lain-lain (nyatakan)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="otherFormTypeGroup" style="display: none;">
+                        <label for="otherFormType">Sila Nyatakan</label>
+                        <input type="text" id="otherFormType" name="otherFormType" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerDetails">Butiran Form Yang Diperlukan</label>
+                        <textarea id="customerDetails" name="customerDetails" class="form-textarea" rows="4" placeholder="Sila berikan maklumat terperinci tentang form yang anda perlukan, seperti warna, logo, dll."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="domainOption">Pilihan Domain</label>
+                        <select id="domainOption" name="domainOption" class="form-select" required>
+                            <option value="Tanpa Domain">Tanpa Domain (RM50)</option>
+                            <option value="Dengan Domain">Dengan Domain Custom (RM50 + RM80)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="btn-submit">Hantar Tempahan</button>
+                        <p class="form-note">Kami akan menghubungi anda melalui WhatsApp selepas menerima tempahan.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOMAIN SECTION -->
+    <section class="domain">
+        <div class="container">
+            <div class="domain-container">
+                <h3>Pilihan Domain Custom</h3>
+                <p>Tingkatkan lagi imej profesional perniagaan anda dengan domain custom.</p>
+                <p>Dengan tambahan RM80 sahaja, anda boleh mendapatkan domain custom untuk form anda.</p>
+                <div class="domain-badge">PROMOSI: Bayar RM50 sahaja untuk form lengkap terus ke WhatsApp tanpa domain custom</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Perkhidmatan Form Profesional. Hak Cipta Terpelihara.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+
+            // Hide all tab content
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].className = tabContent[i].className.replace(" active", "");
+            }
+
+            // Remove "active" class from all tab buttons
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+
+            // Show the current tab and add "active" class to the button that opened the tab
+            document.getElementById(tabName).className += " active";
+            evt.currentTarget.className += " active";
+        }
+        
+        // How to Order button functionality
+        document.getElementById('howToOrderBtn').addEventListener('click', function() {
+            var orderSteps = document.getElementById('orderSteps');
+            if (orderSteps.style.display === 'none') {
+                orderSteps.style.display = 'flex';
+                this.innerHTML = '<i class="fas fa-times"></i> TUTUP CARA ORDER';
+            } else {
+                orderSteps.style.display = 'none';
+                this.innerHTML = '<i class="fas fa-shopping-cart"></i> CARA ORDER';
+            }
+        });
+        
+        // Services button functionality
+        document.getElementById('servicesBtn').addEventListener('click', function() {
+            var servicesList = document.getElementById('servicesList');
+            if (servicesList.style.display === 'none') {
+                servicesList.style.display = 'flex';
+                this.innerHTML = '<i class="fas fa-times"></i> TUTUP PERKHIDMATAN';
+            } else {
+                servicesList.style.display = 'none';
+                this.innerHTML = '<i class="fas fa-list-alt"></i> PERKHIDMATAN KAMI';
+            }
+        });
+        
+        // Modal Form functionality
+        const modal = document.getElementById('formModal');
+        const openModalBtn = document.getElementById('orderFormBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        
+        openModalBtn.addEventListener('click', function() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+        });
+        
+        closeModalBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        // Close modal when clicking outside of modal content
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Form Type selection handling
+        document.getElementById('formType').addEventListener('change', function() {
+            var otherGroup = document.getElementById('otherFormTypeGroup');
+            if (this.value === 'Lain-lain') {
+                otherGroup.style.display = 'block';
+            } else {
+                otherGroup.style.display = 'none';
+            }
+        });
+        
+        // Form submission to WhatsApp
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('customerName').value;
+            var phone = document.getElementById('customerPhone').value;
+            var email = document.getElementById('customerEmail').value;
+            var formType = document.getElementById('formType').value;
+            var otherFormType = document.getElementById('otherFormType').value;
+            var details = document.getElementById('customerDetails').value;
+            var domainOption = document.getElementById('domainOption').value;
+            
+            // Format the selected form type
+            var selectedFormType = formType;
+            if (formType === 'Lain-lain') {
+                selectedFormType = 'Lain-lain: ' + otherFormType;
+            }
+            
+            // Prepare WhatsApp message text
+            var message = 'Tempahan Form Profesional\n\n';
+            message += 'Nama: ' + name + '\n';
+            message += 'No. Telefon: ' + phone + '\n';
+            message += 'Emel: ' + email + '\n';
+            message += 'Jenis Form: ' + selectedFormType + '\n';
+            message += 'Butiran Form: ' + details + '\n';
+            message += 'Pilihan Domain: ' + domainOption + '\n';
+            
+            // Encode the message for WhatsApp URL
+            var encodedMessage = encodeURIComponent(message);
+            
+            // Redirect to WhatsApp with the message
+            window.location.href = 'https://wa.me/601169887631?text=' + encodedMessage;
+        });
+    </script>
+</body>
+</html>
